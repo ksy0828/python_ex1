@@ -48,7 +48,7 @@ while True:
     for file_name in result_diff:
         print(f"새로운 파일 탐지: {file_name}")
         with open(f"{day}월 탐지 보고서.txt", "a", encoding='utf-8') as file:
-            file.write(f"작성자: 조정원\n")
+            file.write(f"작성자: 짱구\n")
             file.write(f"주요 내용 : 신규 파일 탐지\n")
             file.write(f"시간: {hour} 파일 내용 {file_name}\n")
         
