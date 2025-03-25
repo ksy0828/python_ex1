@@ -1,4 +1,4 @@
-Line 1: Welcome to Python file handling.
-Line 2: This is the second line.
-Line 3: Here is the third line.
-Line 4: The file ends here.
+Welcome to Python file handling.
+This is the second line.
+Here is the third line.
+The file ends here.
