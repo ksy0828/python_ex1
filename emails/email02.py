@@ -9,7 +9,7 @@ def mail_sender(name, file_path, line): #정의함수 지정
     load_dotenv()
     send_email = os.getenv("SECRET_ID")
     send_pwd = os.getenv("SECRET_PASS")
-    recv_email = "kim42348@naver.com"
+    recv_email = "@naver.com"
 
     smtp_name = "smtp.naver.com" 
     smtp_port = 587              

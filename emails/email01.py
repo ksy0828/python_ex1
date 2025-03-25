@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 send_email = os.getenv("SECRET_ID")
 send_pwd = os.getenv("SECRET_PASS")
-recv_email = "kim42348@naver.com"
+recv_email = "@naver.com"
 
 smtp_name = "smtp.naver.com" 
 smtp_port = 587              
