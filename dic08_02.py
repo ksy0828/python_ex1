@@ -10,10 +10,6 @@ from datetime import datetime
 
 DIR_PATH = "uploads"
 
-#시간 정보
-now = datetime.now() 
-day = now.strftime("%Y-%m-%d")
-hour = now.strftime("%H:%M:%S")
 
 #기존 파일 목록 가져오기
 pre_file = set(os.listdir(DIR_PATH)) #그냥하면 오류..set으로 타입 변환
@@ -21,15 +17,29 @@ print(pre_file)
 
 #파일이  새로 들어오는지 모니터링
 while True:
+
+    #시간 정보
+    now = datetime.now() 
+    day = now.strftime("%Y-%m-%d")
+    hour = now.strftime("%H:%M:%S")
+
     current_file = set(os.listdir(DIR_PATH))
     result_diff = current_file - pre_file
-    print(result_diff)
-    print("파일 탐지 중..")
-
-    if pre_file != current_file:
+    #print(result_diff)
+    
+    if result_diff:
         with open('report.txt', 'a', encoding='utf-8') as file:
-            file.write(f"\n 새 파일 감지, 시간 : {hour}")
+            file.write(f"\n 새 파일 감지 : {','.join(result_diff)}, 시간 : {hour}")
 
+    # 강사님 방식
+    # for file_name in result_diff:
+    #     print(f"새로운 파일 탐지 : {file_name}")
+    #     with open(f"{day}월_탐지 보고서.txt", "a", encoding="UTF-8") as file:
+    #         file.write(f"작성자: 조정원\n")
+    #         file.write(f"주요 내용: 신규 파일 탐지\n")
+    #         file.write(f"시간: {hour} 파일 내용 {file_name}\n")
+
+    print("파일 탐지 중..")
     pre_file = current_file #차이점을 기존파일로 업데이트
     time.sleep(1)
 
