@@ -16,7 +16,7 @@ def mail_sender(name, file_path, line):
     load_dotenv()
     send_email = os.getenv("SECRET_ID")
     send_pwd = os.getenv("SECRET_PASS")
-    recv_email = "kim42348@naver.com"
+    recv_email = "@naver.com"
 
     smtp = smtplib.SMTP('smtp.naver.com', 587)
     smtp.ehlo()
