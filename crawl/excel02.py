@@ -15,7 +15,7 @@ tags = soup.select('#main_content > div.content > ul > li > a.main_menu')
 #print(tags)
 
 wb = Workbook()
-ws = wb.active
+ws = wb.active #현재 활성화된 시트에 접근 (마지막으로 편집한 곳)
 ws['A1'] = "설명"
 ws['B1'] = "URL 링크"
 
